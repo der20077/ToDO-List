@@ -47,6 +47,14 @@ function loadToDo() {
       });
   };
 
+  input.addEventListener("input", () => {
+    if (input.value.trim().length > 0) {
+      btnTask.style.display = "block";
+    } else {
+      btnTask.style.display = "none";
+    }
+  });
+
   btnTask.addEventListener("click", (event) => {
     event.preventDefault();
     const textTask = input.value.trim();
