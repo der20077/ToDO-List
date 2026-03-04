@@ -1,0 +1,86 @@
+li {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(61, 97, 208, 1);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: rgba(89, 131, 252, 1);
+  background-image: linear-gradient(
+    169deg,
+    rgba(89, 131, 252, 1) 43%,
+    rgba(61, 97, 208, 1) 100%
+  );
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: aliceblue;
+  font-weight: 700;
+  font-size: 70px;
+  margin-bottom: 100px;
+}
+
+.header {
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 10px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+#inputTask {
+  margin-right: 20px;
+  border: none;
+  background-color: aliceblue;
+  width: 90%;
+  padding-left: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+
+#addTaskBtn {
+  background-color: rgba(89, 131, 252, 1);
+  color: aliceblue;
+  font-size: 20px;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 8px;
+}
+
+#list {
+  background-color: aliceblue;
+  height: 400px;
+  width: 100%;
+  border-radius: 20px;
+  overflow-y: scroll;
+}
+
+.btnDel {
+  border: none;
+  background-color: transparent;
+  padding-right: 10px;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.span {
+  font-size: 20px;
+}
