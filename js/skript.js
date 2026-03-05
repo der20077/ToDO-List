@@ -4,6 +4,19 @@ function loadToDo() {
   const input = document.getElementById("inputTask");
   const btnTask = document.getElementById("addTaskBtn");
   const listTask = document.getElementById("list");
+  const temeSwitsh = document.getElementById("themeSwitch");
+
+  const toggleTheme = () => {
+    const currnetTeme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currnetTeme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+  };
+
+  const setTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme);
+  };
+
+  temeSwitsh.addEventListener("change", toggleTheme);
 
   const loadTask = () => {
     const task = JSON.parse(localStorage.getItem("tasks")) || [];
