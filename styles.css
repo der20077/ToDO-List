@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+#posts {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.post {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 28px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #b9f700;
+}
+
+.post h2 {
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.post p {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #b9f700 0%, #8fc100 100%);
+  color: #1a1a2e;
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(185, 247, 0, 0.3);
+  z-index: 100;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(185, 247, 0, 0.4);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#loader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .post {
+    padding: 20px;
+  }
+
+  .post h2 {
+    font-size: 1.25rem;
+  }
+
+  button {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  #posts {
+    gap: 16px;
+  }
+}
+
+/* Контейнер комментариев */
+.coments {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border-left: 4px solid #b9f700;
+}
+
+/* Заголовок комментариев */
+.coments p2 {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #b9f700;
+}
+
+/* Отдельный комментарий */
+.coment {
+  background-color: white;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.coment:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Последний комментарий без отступа */
+.coment:last-child {
+  margin-bottom: 0;
+}
+
+/* Имя автора комментария */
+.coment p:first-child {
+  font-weight: bold;
+  color: #b9f700;
+  margin-bottom: 5px;
+}
+
+/* Email */
+.coment p:nth-child(2) {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Текст комментария */
+.coment p:last-child {
+  color: #444;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+
+/* Пост (карточка) */
+.post {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Заголовок поста */
+.post h2 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+/* Текст поста */
+.post p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Блок автора */
+.post > div:first-of-type {
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.post > div:first-of-type p {
+  margin: 5px 0;
+}
+
+.post > div:first-of-type p:first-child {
+  color: #2e7d32;
+  font-weight: bold;
+}
